@@ -1,23 +1,31 @@
 {
-  "name": "pdf-prototype",
-  "version": "1.0.0",
-  "private": true,
-  "description": "pdf-prototype",
-  "author": "Hannah",
-  "keywords": [
-    "gatsby"
-  ],
-  "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "dependencies": {
-    "gatsby": "^4.5.2",
-    "gatsby-plugin-google-analytics": "^4.5.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  }
+    "name": "pdf-prototype",
+    "version": "1.0.0",
+    "private": true,
+    "description": "pdf-prototype",
+    "author": "Hannah",
+    "keywords": [
+        "gatsby"
+    ],
+    "scripts": {
+        "develop": "gatsby develop",
+        "start": "gatsby develop",
+        "build": "gatsby build",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean",
+        "prettier": "prettier \"**/*.+(js|json|jsx)\"",
+        "prettier:format": "yarn prettier --write",
+        "prettier:check": "yarn prettier --list-different",
+        "validate": "npm-run-all --parallel prettier:check lint build"
+    },
+    "dependencies": {
+        "gatsby": "^4.5.2",
+        "gatsby-plugin-google-analytics": "^4.5.0",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-helmet": "^6.1.0"
+    },
+    "devDependencies": {
+        "eslint-config-prettier": "^6.11.0"
+    }
 }

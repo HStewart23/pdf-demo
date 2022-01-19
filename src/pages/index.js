@@ -1,6 +1,7 @@
-import * as React from "react"
+import * as React from "react";
+import {Helmet} from "react-helmet";
+import SizedContainer from "./sized-container";
 
-// styles
 const pageStyles = {
   color: "#232129",
   padding: 96,
@@ -11,78 +12,17 @@ const headingStyles = {
   marginBottom: 64,
   maxWidth: 320,
 }
-const headingAccentStyles = {
-  color: "#663399",
-}
 const paragraphStyles = {
   marginBottom: 48,
 }
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-
-// markup
 const IndexPage = () => {
+
   return (
     <main style={pageStyles}>
+      <Helmet>
+        <script type="text/javascript" src="https://documentcloud.adobe.com/view-sdk/main.js" />
+      </Helmet>
       <title>📄 PDF Demo Page 📄</title>
       <h1 style={headingStyles}>
        PDF PROTOTYPE V.1
@@ -90,7 +30,7 @@ const IndexPage = () => {
       <p style={paragraphStyles}>
         We use a lot of pdfs so this initial prototype is just to see exactly how useful it is to use the ADOBE PDF VIEWER as an alternate way to view our PDFs. So with no further ado please find below a pdf …
       </p>
-      <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+      <SizedContainer/>
     </main>
   )
 }
