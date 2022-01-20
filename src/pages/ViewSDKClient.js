@@ -1,21 +1,9 @@
-/*
-Copyright 2020 Adobe
-All Rights Reserved.
-
-NOTICE: Adobe permits you to use, modify, and distribute this file in
-accordance with the terms of the Adobe license agreement accompanying
-it. If you have received this file from a source other than Adobe,
-then your use, modification, or distribution of it requires the prior
-written permission of Adobe.
-*/
-
 class ViewSDKClient {
     constructor() {
         this.readyPromise = new Promise((resolve) => {
             if (window.AdobeDC) {
                 resolve();
             } else {
-                /* Wait for Adobe Document Services PDF Embed API to be ready */
                 document.addEventListener("adobe_dc_view_sdk.ready", () => {
                     resolve();
                 });
@@ -30,10 +18,9 @@ class ViewSDKClient {
 
     previewFile(divId, viewerConfig) {
         const config = {
-            /* Pass your registered client id */
-            clientId: "8c0cd670273d451cbc9b351b11d22318",
+            clientId: "60d3e9d87afb4d18ac7701b7e1a0ce1f",
         };
-        if (divId) { /* Optional only for Light Box embed mode */
+        if (divId) {
             /* Pass the div id in which PDF should be rendered */
             config.divId = divId;
         }
