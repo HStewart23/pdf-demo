@@ -25,7 +25,7 @@ module.exports = {
         gtmPreview: 'YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME',
         dataLayerName: 'YOUR_DATA_LAYER_NAME',
 
-        // Name of the event that is triggered
+        // Name of the event that is triggeredd
         // on every Gatsby route change.
         //
         // Defaults to gatsby-route-change
