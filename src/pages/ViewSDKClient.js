@@ -125,7 +125,8 @@ const ViewNewSDKClient = () => {
         window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
         /* call back function */
         event => {
-          console.log(event);
+          console.log('Type ' + event.type);
+          console.log('Data ' + event.data);
         },
         /* options to control the callback execution */
         {
