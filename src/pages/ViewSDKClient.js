@@ -64,18 +64,18 @@ const ViewNewSDKClient = () => {
         /* Type of call back */
         window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
         /* call back function */
-        event => {
-          console.log('Type ' + event.type);
-          console.log('Data ' + event.data);
-        },
         /* options to control the callback execution */
         {
-          /* Enable PDF analytics events on user interaction. */
           enablePDFAnalytics: true,
         },
 
         window.AdobeDC.View.Enum.PDFAnalyticsEvents.PAGE_VIEW,
-        window.AdobeDC.View.Enum.PDFAnalyticsEvents.DOCUMENT_DOWNLOAD
+        window.AdobeDC.View.Enum.PDFAnalyticsEvents.DOCUMENT_DOWNLOAD,
+
+        event => {
+          console.log('Type ' + event.type);
+          console.log('Data ' + event.data);
+        }
       );
     }
   }
