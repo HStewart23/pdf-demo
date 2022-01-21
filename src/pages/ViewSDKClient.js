@@ -133,6 +133,8 @@ const ViewNewSDKClient = () => {
         window.AdobeDC.View.Enum.PDFAnalyticsEvents.DOCUMENT_DOWNLOAD
       );
     }
+
+    registerEventsHandler()
   }
 
   return isBrowser ? new ViewSDKClient() : null;
