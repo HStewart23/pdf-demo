@@ -22,7 +22,7 @@ const ViewNewSDKClient = () => {
 
     previewFile(divId, viewerConfig) {
       const config = {
-        clientId: '60d3e9d87afb4d18ac7701b7e1a0ce1f',
+        clientId: '3c7f6c1d335d46c8a162d2a119183399',
       };
       if (divId) {
         /* Pass the div id in which PDF should be rendered */
