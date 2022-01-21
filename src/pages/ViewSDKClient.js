@@ -71,6 +71,10 @@ const ViewNewSDKClient = () => {
         /* options to control the callback execution */
         {
           /* Enable PDF analytics events on user interaction. */
+          listenOn: [
+            AdobeDC.View.Enum.PDFAnalyticsEvents.PAGE_VIEW,
+            AdobeDC.View.Enum.PDFAnalyticsEvents.DOCUMENT_DOWNLOAD,
+          ],
           enablePDFAnalytics: true,
         }
       );
