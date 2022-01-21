@@ -1,6 +1,5 @@
-import * as React from 'react';
-
 const isBrowser = typeof window !== 'undefined';
+
 const ViewNewSDKClient = () => {
   class ViewSDKClient {
     constructor() {
@@ -28,15 +27,12 @@ const ViewNewSDKClient = () => {
         /* Pass the div id in which PDF should be rendered */
         config.divId = divId;
       }
-      /* Initialize the AdobeDC View object */
+
       this.adobeDCView = new window.AdobeDC.View(config);
 
-      /* Invoke the file preview API on Adobe DC View object */
       const previewFilePromise = this.adobeDCView.previewFile(
         {
-          /* Pass information on how to access the file */
           content: {
-            /* Location of file where it is hosted */
             location: {
               url: 'https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf',
               /*
@@ -52,9 +48,7 @@ const ViewNewSDKClient = () => {
           },
           /* Pass meta data of file */
           metaData: {
-            /* file name */
             fileName: 'Bodea Brochure.pdf',
-            /* file ID */
             id: '6d07d124-ac85-43b3-a867-36930f502ac6',
           },
         },
@@ -64,32 +58,26 @@ const ViewNewSDKClient = () => {
       return previewFilePromise;
     }
 
-    previewFileUsingFilePromise(divId, filePromise, fileName) {
-      /* Initialize the AdobeDC View object */
-      this.adobeDCView = new window.AdobeDC.View({
-        /* Pass your registered client id */
-        clientId: '8c0cd670273d451cbc9b351b11d22318',
-        /* Pass the div id in which PDF should be rendered */
-        divId,
-      });
+    // previewFileUsingFilePromise(divId, filePromise, fileName) {
+    //   this.adobeDCView = new window.AdobeDC.View({
+    //     clientId: '8c0cd670273d451cbc9b351b11d22318',
+    //     divId,
+    //   });
 
-      /* Invoke the file preview API on Adobe DC View object */
-      this.adobeDCView.previewFile(
-        {
-          /* Pass information on how to access the file */
-          content: {
-            /* pass file promise which resolve to arrayBuffer */
-            promise: filePromise,
-          },
-          /* Pass meta data of file */
-          metaData: {
-            /* file name */
-            fileName: fileName,
-          },
-        },
-        {}
-      );
-    }
+    //   this.adobeDCView.previewFile(
+    //     {
+    //       content: {
+    //         promise: filePromise,
+    //       },
+    //       /* Pass meta data of file */
+    //       metaData: {
+    //         /* file name */
+    //         fileName: fileName,
+    //       },
+    //     },
+    //     {}
+    //   );
+    // }
 
     registerSaveApiHandler() {
       /* Define Save API Handler */
