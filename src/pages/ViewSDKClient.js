@@ -134,7 +134,9 @@ const ViewNewSDKClient = () => {
       );
     }
 
-    registerEventsHandler()
+    // get eventsHandler() {
+    //   return this.registerEventsHandler();
+    // }
   }
 
   return isBrowser ? new ViewSDKClient() : null;
