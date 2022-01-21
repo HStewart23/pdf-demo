@@ -63,6 +63,8 @@ const ViewNewSDKClient = () => {
       this.adobeDCView.registerCallback(
         /* Type of call back */
         window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
+        window.AdobeDC.View.Enum.PDFAnalyticsEvents.PAGE_VIEW,
+        window.AdobeDC.View.Enum.PDFAnalyticsEvents.DOCUMENT_DOWNLOAD,
         /* call back function */
         event => {
           console.log('Type ' + event.type);
@@ -71,10 +73,6 @@ const ViewNewSDKClient = () => {
         /* options to control the callback execution */
         {
           /* Enable PDF analytics events on user interaction. */
-          listenOn: [
-            AdobeDC.View.Enum.PDFAnalyticsEvents.PAGE_VIEW,
-            AdobeDC.View.Enum.PDFAnalyticsEvents.DOCUMENT_DOWNLOAD,
-          ],
           enablePDFAnalytics: true,
         }
       );
