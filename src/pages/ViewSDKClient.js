@@ -58,53 +58,32 @@ const ViewNewSDKClient = () => {
       return previewFilePromise;
     }
 
-    // previewFileUsingFilePromise(divId, filePromise, fileName) {
-    //   this.adobeDCView = new window.AdobeDC.View({
-    //     clientId: '8c0cd670273d451cbc9b351b11d22318',
-    //     divId,
-    //   });
+    // registerSaveApiHandler() {
+    //   /* Define Save API Handler */
+    //   const saveApiHandler = (metaData, content, options) => {
+    //     console.log(metaData, content, options);
+    //     return new Promise(resolve => {
+    //       /* Dummy implementation of Save API, replace with your business logic */
+    //       setTimeout(() => {
+    //         const response = {
+    //           code: window.AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
+    //           data: {
+    //             metaData: Object.assign(metaData, {
+    //               updatedAt: new Date().getTime(),
+    //             }),
+    //           },
+    //         };
+    //         resolve(response);
+    //       }, 2000);
+    //     });
+    //   };
 
-    //   this.adobeDCView.previewFile(
-    //     {
-    //       content: {
-    //         promise: filePromise,
-    //       },
-    //       /* Pass meta data of file */
-    //       metaData: {
-    //         /* file name */
-    //         fileName: fileName,
-    //       },
-    //     },
+    //   this.adobeDCView.registerCallback(
+    //     window.AdobeDC.View.Enum.CallbackType.SAVE_API,
+    //     saveApiHandler,
     //     {}
     //   );
     // }
-
-    registerSaveApiHandler() {
-      /* Define Save API Handler */
-      const saveApiHandler = (metaData, content, options) => {
-        console.log(metaData, content, options);
-        return new Promise(resolve => {
-          /* Dummy implementation of Save API, replace with your business logic */
-          setTimeout(() => {
-            const response = {
-              code: window.AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
-              data: {
-                metaData: Object.assign(metaData, {
-                  updatedAt: new Date().getTime(),
-                }),
-              },
-            };
-            resolve(response);
-          }, 2000);
-        });
-      };
-
-      this.adobeDCView.registerCallback(
-        window.AdobeDC.View.Enum.CallbackType.SAVE_API,
-        saveApiHandler,
-        {}
-      );
-    }
 
     registerEventsHandler() {
       /* Register the callback to receive the events */
