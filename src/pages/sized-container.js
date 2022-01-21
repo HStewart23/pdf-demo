@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import ViewNewSDKClient from './ViewSDKClient';
-
 class SizedContainer extends Component {
   componentDidMount() {
     const viewSDKClient = new ViewNewSDKClient();
     viewSDKClient.ready().then(() => {
-      /* Invoke file preview */
       viewSDKClient.previewFile('pdf-div', {
-        /* Pass the embed mode option here */
         embedMode: 'SIZED_CONTAINER',
       });
     });
