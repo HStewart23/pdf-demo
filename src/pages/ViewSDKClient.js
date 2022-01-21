@@ -113,23 +113,24 @@ const ViewNewSDKClient = () => {
     }
 
     registerEventsHandler() {
+      console.log('inside registerEventsHandler() - 1');
       /* Register the callback to receive the events */
       this.adobeDCView.registerCallback(
+        console.log('adobeDCView.registerCallback() - 2'),
         /* Type of call back */
         window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
         /* call back function */
+        event => {
+          console.log('adobe event returned - 3');
+          console.log('Event Type ' + event.type);
+          console.log('Event Data ' + event.data);
+        },
         /* options to control the callback execution */
         {
           enablePDFAnalytics: true,
         },
-
         window.AdobeDC.View.Enum.PDFAnalyticsEvents.PAGE_VIEW,
-        window.AdobeDC.View.Enum.PDFAnalyticsEvents.DOCUMENT_DOWNLOAD,
-
-        event => {
-          console.log('Event Type ' + event.type);
-          console.log('Event Data ' + event.data);
-        }
+        window.AdobeDC.View.Enum.PDFAnalyticsEvents.DOCUMENT_DOWNLOAD
       );
     }
   }
