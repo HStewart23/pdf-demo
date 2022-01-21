@@ -119,7 +119,7 @@ const ViewNewSDKClient = () => {
     }
 
     registerEventsHandler() {
-      /* Register the callback to receive the events */
+      /* Register the callback to receive the eventsss */
       this.adobeDCView.registerCallback(
         /* Type of call back */
         window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
