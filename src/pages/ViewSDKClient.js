@@ -49,7 +49,7 @@ const ViewNewSDKClient = () => {
           /* Pass meta data of file */
           metaData: {
             fileName: 'The Nature Imperative.pdf',
-            id: '3c7f6c1d335d46c8a162d2a119183399',
+            id: 'b9eb10d4729b433cbb865c348412b92c',
           },
         },
         viewerConfig
