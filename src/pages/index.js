@@ -16,11 +16,16 @@ const paragraphStyles = {
   marginBottom: 48,
 };
 
+const pdfStyles = {
+  height: 500,
+  width: 700,
+};
+
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
       <Helmet>
-        <script id="google-tag-manager-script">
+        {/* <script id="google-tag-manager-script">
           {`(function (w, d, s, l, i) {
               w[l] = w[l] || [];
               w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
@@ -30,8 +35,8 @@ const IndexPage = () => {
               j.async = true;
               j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
               f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', '${process.env.GATSBY_GOOGLE_TAG_MANAGER_ID}');`}
-        </script>
+            })(window, document, 'script', 'dataLayer', 'GTM ID');`}
+        </script> */}
         <script
           type="text/javascript"
           src="https://documentcloud.adobe.com/view-sdk/main.js"
@@ -44,7 +49,9 @@ const IndexPage = () => {
         how useful it is to use the ADOBE PDF VIEWER as an alternate way to view
         our PDFs. So with no further ado please find below a pdf …
       </p>
-      <SizedContainer />
+      <div style={pdfStyles}>
+        <SizedContainer />
+      </div>
     </main>
   );
 };

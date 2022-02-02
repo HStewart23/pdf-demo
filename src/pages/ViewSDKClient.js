@@ -21,7 +21,7 @@ const ViewNewSDKClient = () => {
 
     previewFile(divId, viewerConfig) {
       const config = {
-        clientId: '3c7f6c1d335d46c8a162d2a119183399',
+        clientId: '60d3e9d87afb4d18ac7701b7e1a0ce1f',
       };
       if (divId) {
         /* Pass the div id in which PDF should be rendered */
@@ -34,7 +34,7 @@ const ViewNewSDKClient = () => {
         {
           content: {
             location: {
-              url: 'https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf',
+              url: 'https://emf.thirdlight.com/file/24/FM9nvqPFM.IixvIFMcZeFM2mNhd/The20Nature20Imperative3A20How20the20circular20economy20tackles20biodiversity20loss.pdf',
               /*
                     If the file URL requires some additional headers, then it can be passed as follows:-
                     headers: [
@@ -48,8 +48,8 @@ const ViewNewSDKClient = () => {
           },
           /* Pass meta data of file */
           metaData: {
-            fileName: 'Bodea Brochure.pdf',
-            id: '6d07d124-ac85-43b3-a867-36930f502ac6',
+            fileName: 'The Nature Imperative.pdf',
+            id: '3c7f6c1d335d46c8a162d2a119183399',
           },
         },
         viewerConfig
@@ -58,79 +58,20 @@ const ViewNewSDKClient = () => {
       return previewFilePromise;
     }
 
-    // previewFileUsingFilePromise(divId, filePromise, fileName) {
-    //   /* Initialize the AdobeDC View object */
-    //   this.adobeDCView = new window.AdobeDC.View({
-    //     /* Pass your registered client id */
-    //     clientId: '8c0cd670273d451cbc9b351b11d22318',
-    //     /* Pass the div id in which PDF should be rendered */
-    //     divId,
-    //   });
-
-    //   /* Invoke the file preview API on Adobe DC View object */
-    //   this.adobeDCView.previewFile(
-    //     {
-    //       /* Pass information on how to access the file */
-    //       content: {
-    //         /* pass file promise which resolve to arrayBuffer */
-    //         promise: filePromise,
-    //       },
-    //       /* Pass meta data of file */
-    //       metaData: {
-    //         /* file name */
-    //         fileName: fileName,
-    //       },
-    //     },
-    //     {}
-    //   );
-    // }
-
-    // registerSaveApiHandler() {
-    //   /* Define Save API Handler */
-    //   const saveApiHandler = (metaData, content, options) => {
-    //     console.log(metaData, content, options);
-    //     return new Promise(resolve => {
-    //       /* Dummy implementation of Save API, replace with your business logic */
-    //       setTimeout(() => {
-    //         const response = {
-    //           code: window.AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
-    //           data: {
-    //             metaData: Object.assign(metaData, {
-    //               updatedAt: new Date().getTime(),
-    //             }),
-    //           },
-    //         };
-    //         resolve(response);
-    //       }, 2000);
-    //     });
-    //   };
-
-    //   this.adobeDCView.registerCallback(
-    //     window.AdobeDC.View.Enum.CallbackType.SAVE_API,
-    //     saveApiHandler,
-    //     {}
-    //   );
-    // }
-
     registerEventsHandler() {
-      console.log('inside registerEventsHandler() - 1');
-      /* Register the callback to receive the events */
       this.adobeDCView.registerCallback(
-        console.log('adobeDCView.registerCallback() - 2'),
-        /* Type of call back */
         window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
         /* call back function */
         event => {
-          console.log('adobe event returned - 3');
           console.log('Event Type ' + event.type);
-          console.log('Event Data ' + event.data);
+          console.log(event.data);
         },
         /* options to control the callback execution */
         {
           enablePDFAnalytics: true,
-        },
-        window.AdobeDC.View.Enum.PDFAnalyticsEvents.PAGE_VIEW,
-        window.AdobeDC.View.Enum.PDFAnalyticsEvents.DOCUMENT_DOWNLOAD
+        }
+        // window.AdobeDC.View.Enum.PDFAnalyticsEvents.PAGE_VIEW,
+        // window.AdobeDC.View.Enum.PDFAnalyticsEvents.DOCUMENT_DOWNLOAD
       );
     }
 
