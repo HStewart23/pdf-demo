@@ -22,6 +22,7 @@
     "gatsby": "^4.5.4",
     "gatsby-link": "^4.5.0",
     "gatsby-plugin-google-analytics": "^2.11.0",
+    "gatsby-plugin-google-gtag": "^4.6.0",
     "gatsby-plugin-google-tagmanager": "^2.11.0",
     "gatsby-react-router-scroll": "^5.5.0",
     "react": "^17.0.1",

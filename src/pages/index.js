@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import SizedContainer from './sized-container';
+// import TagManager from 'react-gtm-module';
 
 const pageStyles = {
   color: '#232129',
@@ -22,18 +23,22 @@ const pdfStyles = {
 };
 
 const IndexPage = () => {
+  //   const tagManagerArgs = {
+  //     gtmId: 'GTM-N54G3K6',
+  //   };
+  //   TagManager.initialize(tagManagerArgs);
   return (
     <main style={pageStyles}>
       <Helmet>
-        <script
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-DH2LRX8YLP"
         ></script>
         <script>
           window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
+          {window.dataLayer.push(arguments)}
           gtag('js', new Date()); gtag('config', 'G-DH2LRX8YLP');
-        </script>
+        </script> */}
         <script
           type="text/javascript"
           src="https://documentcloud.adobe.com/view-sdk/main.js"
