@@ -25,7 +25,7 @@ const IndexPage = () => {
   return (
     <main style={pageStyles}>
       <Helmet>
-        {/* <script
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-DH2LRX8YLP"
         ></script>
@@ -33,7 +33,7 @@ const IndexPage = () => {
           window.dataLayer = window.dataLayer || []; function gtag()
           {dataLayer.push(arguments)}
           gtag('js', new Date()); gtag('config', 'G-DH2LRX8YLP');
-        </script> */}
+        </script>
         <script
           type="text/javascript"
           src="https://documentcloud.adobe.com/view-sdk/main.js"
