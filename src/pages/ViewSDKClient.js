@@ -21,10 +21,9 @@ const ViewNewSDKClient = () => {
 
     previewFile(divId, viewerConfig) {
       const config = {
-        clientId: '60d3e9d87afb4d18ac7701b7e1a0ce1f',
+        clientId: 'b9eb10d4729b433cbb865c348412b92c',
       };
       if (divId) {
-        /* Pass the div id in which PDF should be rendered */
         config.divId = divId;
       }
 
@@ -46,7 +45,6 @@ const ViewNewSDKClient = () => {
                     */
             },
           },
-          /* Pass meta data of file */
           metaData: {
             fileName: 'The Nature Imperative.pdf',
             id: 'b9eb10d4729b433cbb865c348412b92c',
@@ -61,23 +59,17 @@ const ViewNewSDKClient = () => {
     registerEventsHandler() {
       this.adobeDCView.registerCallback(
         window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
-        /* call back function */
         event => {
+          // prettier-ignore
+          window.dataLayer.push({ 'event': event.type });
           console.log('Event Type ' + event.type);
-          console.log(event.data);
+          // console.log(event.data);
         },
-        /* options to control the callback execution */
         {
           enablePDFAnalytics: true,
         }
-        // window.AdobeDC.View.Enum.PDFAnalyticsEvents.PAGE_VIEW,
-        // window.AdobeDC.View.Enum.PDFAnalyticsEvents.DOCUMENT_DOWNLOAD
       );
     }
-
-    // get eventsHandler() {
-    //   return this.registerEventsHandler();
-    // }
   }
 
   return isBrowser ? new ViewSDKClient() : null;

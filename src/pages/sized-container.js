@@ -6,7 +6,6 @@ const SizedContainer = () => {
     const viewSDKClient = new ViewSDKClient();
 
     viewSDKClient.ready().then(() => {
-      // console.log('process.env.adobe id->' + process.env.ADOBE_ID);
       viewSDKClient.previewFile('pdf-div', {
         embedMode: 'SIZED_CONTAINER',
       });

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import SizedContainer from './sized-container';
-// import TagManager from 'react-gtm-module';
 
 const pageStyles = {
   color: '#232129',
@@ -24,6 +23,7 @@ const pdfStyles = {
 
 const IndexPage = () => {
   const gtmDataLayerVars = {
+    pageId: 'pdf-demo',
     event: 'Page View',
     pageType: 'pdf demo page',
   };
@@ -33,9 +33,6 @@ const IndexPage = () => {
         <script id="initiate-datalayer-script">
           {`
           window.dataLayer = window.dataLayer || []; 
-          window.dataLayer.push(
-            ${JSON.stringify(gtmDataLayerVars)}
-          );
         `}
         </script>
         <script id="google-tag-manager-script">
