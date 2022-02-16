@@ -9,7 +9,6 @@ const SizedContainer = () => {
       viewSDKClient.previewFile('pdf-div', {
         embedMode: 'SIZED_CONTAINER',
       });
-      console.log(viewSDKClient.registerEventsHandler());
       viewSDKClient.registerEventsHandler();
     });
   }, []);
