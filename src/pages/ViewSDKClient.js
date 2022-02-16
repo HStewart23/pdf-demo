@@ -61,7 +61,7 @@ const ViewNewSDKClient = () => {
         window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
         event => {
           // prettier-ignore
-          window.dataLayer.push({ 'event': event.type });
+          // window.dataLayer.push({ 'event': event.type });
           console.log('Event Type ' + event.type);
           // console.log(event.data);
         },

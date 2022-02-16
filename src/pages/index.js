@@ -33,6 +33,7 @@ const IndexPage = () => {
         <script id="initiate-datalayer-script">
           {`
           window.dataLayer = window.dataLayer || []; 
+          window.dataLayer.push('Hello World');
         `}
         </script>
         <script id="google-tag-manager-script">
