@@ -33,7 +33,7 @@ const ViewNewSDKClient = () => {
         {
           content: {
             location: {
-              url: 'https://emf.thirdlight.com/file/24/FM9nvqPFM.IixvIFMcZeFM2mNhd/The20Nature20Imperative3A20How20the20circular20economy20tackles20biodiversity20loss.pdf',
+              url: 'https://emf.thirdlight.com/file/24/pN3kJWTpN_5hi8hpNordpNJo0VT/1.%20EMF_Africa_Built%20Env_Final-11Oct%20-%20En.pdf',
               /*
                     If the file URL requires some additional headers, then it can be passed as follows:-
                     headers: [
