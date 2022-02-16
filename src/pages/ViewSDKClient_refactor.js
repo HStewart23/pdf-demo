@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 const RefactoredViewNewSDKClient = () => {
-  <>filler content</>;
+  <div>filler content</div>;
 
   //     useEffect(()=>{
 
