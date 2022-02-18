@@ -1,6 +1,3 @@
-// const isBrowser = typeof window !== 'undefined';
-
-// const ViewNewSDKClient = () => {
 class ViewSDKClient {
   constructor() {
     this.readyPromise = new Promise(resolve => {
@@ -13,6 +10,7 @@ class ViewSDKClient {
       }
     });
     this.adobeDCView = undefined;
+    this.pdfEvent = [];
   }
 
   ready() {
@@ -51,17 +49,15 @@ class ViewSDKClient {
     this.adobeDCView.registerCallback(
       window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
       event => {
-        console.log('Event Type ' + event.type);
-        // console.log(event.data);
+        // prettier-ignore
+        this.pdfEvent.push({ 'event': event.type });
       },
       {
         enablePDFAnalytics: true,
       }
     );
+    return this.pdfEvent;
   }
 }
-
-//   return isBrowser ? new ViewSDKClient() : null;
-// };
 
 export default ViewSDKClient;
