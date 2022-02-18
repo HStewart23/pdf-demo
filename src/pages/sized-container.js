@@ -4,7 +4,7 @@ import ViewSDKClient from './ViewSDKClient';
 const SizedContainer = () => {
   const isBrowser = typeof window !== 'undefined';
   if (!isBrowser) {
-    return;
+    return null;
   }
   const addEventToDataLayer = event => {
     window.dataLayer.push({ event: event });
