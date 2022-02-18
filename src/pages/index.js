@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import SizedContainer from './sized-container';
 
@@ -22,12 +22,6 @@ const pdfStyles = {
 };
 
 const IndexPage = () => {
-  const [pdfEvent, setPdfEvent] = useState({});
-  useEffect(() => {
-    window.dataLayer.push({ pdfEvent });
-    // console.log(pdfEvent);
-  }, [pdfEvent]);
-
   return (
     <>
       <Helmet>
@@ -62,7 +56,7 @@ const IndexPage = () => {
           view our PDFs. So with no further ado please find below a pdf …
         </p>
         <div style={pdfStyles}>
-          <SizedContainer setPdfEvent={setPdfEvent} />
+          <SizedContainer />
         </div>
       </main>
     </>

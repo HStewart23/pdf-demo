@@ -1,20 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ViewSDKClient from './ViewSDKClient';
 
-const SizedContainer = ({ setPdfEvent }) => {
-  useEffect(() => {
-    const viewSDKClient = new ViewSDKClient();
+const SizedContainer = () => {
+  const addEventToDataLayer = event => {
+    window.dataLayer.push({ event: event });
+  };
 
-    viewSDKClient.ready().then(() => {
-      viewSDKClient.previewFile('pdf-div', {
-        embedMode: 'SIZED_CONTAINER',
-      });
-      viewSDKClient.registerEventsHandler();
-      console.log(viewSDKClient.registerEventsHandler());
-      setPdfEvent(viewSDKClient.registerEventsHandler());
-      // prettier-ignore
+  const viewSDKClient = new ViewSDKClient();
+
+  viewSDKClient.ready().then(() => {
+    viewSDKClient.previewFile('pdf-div', {
+      embedMode: 'SIZED_CONTAINER',
     });
-  }, [setPdfEvent]);
+    viewSDKClient.registerEventsHandler(addEventToDataLayer);
+  });
 
   return <div id="pdf-div" className="sized-container-div" />;
 };

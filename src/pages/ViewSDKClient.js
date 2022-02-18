@@ -45,12 +45,11 @@ class ViewSDKClient {
     return previewFilePromise;
   }
 
-  registerEventsHandler() {
+  registerEventsHandler(addEventToDataLayer) {
     this.adobeDCView.registerCallback(
       window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
       event => {
-        // prettier-ignore
-        this.pdfEvent.push({ 'event': event.type });
+        addEventToDataLayer(event);
       },
       {
         enablePDFAnalytics: true,
