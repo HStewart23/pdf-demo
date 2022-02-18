@@ -2,6 +2,10 @@ import React from 'react';
 import ViewSDKClient from './ViewSDKClient';
 
 const SizedContainer = () => {
+  const isBrowser = typeof window !== 'undefined';
+  if (!isBrowser) {
+    return;
+  }
   const addEventToDataLayer = event => {
     window.dataLayer.push({ event: event });
   };
