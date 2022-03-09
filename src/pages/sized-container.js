@@ -1,5 +1,5 @@
 import React from 'react';
-import ViewSDKClient from './ViewSDKClient';
+import ViewSDKClient from '../utils/ViewSDKClient';
 
 const SizedContainer = () => {
   const isBrowser = typeof window !== 'undefined';
