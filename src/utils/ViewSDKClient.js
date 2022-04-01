@@ -1,9 +1,5 @@
 class ViewSDKClient {
   constructor() {
-    // const isBrowser = typeof window !== 'undefined';
-    // if (!isBrowser) {
-    //   return null;
-    // } else {
     this.readyPromise = new Promise(resolve => {
       if (window.AdobeDC) {
         resolve();
@@ -15,23 +11,13 @@ class ViewSDKClient {
     });
     this.adobeDCView = undefined;
     this.pdfEvent = [];
-    // }
   }
 
   ready() {
-    // const isBrowser = typeof window !== 'undefined';
-    // if (!isBrowser) {
-    //   return null;
-    // } else {
     return this.readyPromise;
-    // }
   }
 
   previewFile(divId, viewerConfig) {
-    // const isBrowser = typeof window !== 'undefined';
-    // if (!isBrowser) {
-    //   return null;
-    // } else {
     const config = {
       clientId: 'b9eb10d4729b433cbb865c348412b92c',
     };
@@ -61,10 +47,6 @@ class ViewSDKClient {
   }
 
   registerEventsHandler(addEventToDataLayer) {
-    // const isBrowser = typeof window !== 'undefined';
-    // if (!isBrowser) {
-    //   return null;
-    // } else {
     this.adobeDCView.registerCallback(
       window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
       event => {
@@ -75,7 +57,6 @@ class ViewSDKClient {
       }
     );
     return this.pdfEvent;
-    // }
   }
 }
 
